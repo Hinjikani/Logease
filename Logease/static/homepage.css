@@ -1,0 +1,35 @@
+/* * {
+    outline: 2px solid red;
+} */
+
+#backgroundVideo {
+    position:fixed;
+    left:0;
+    top:0;
+    z-index: -100;
+}
+
+.hero-text-main, .hero-text-sub {
+    color: white;
+    font-weight: 700;
+}
+
+.hero-text-main {
+    margin-left: 1.6em;
+    margin-top: 3em;
+}
+
+.hero-text-sub {
+    margin-left: 2em;
+}
+
+
+.hero{
+    position: fixed;
+    left:0;
+    top:0;
+    z-index:-50;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0));
+    width: 100vw;
+    height: 100vh;
+}

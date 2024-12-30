@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Logease</title>
-        <link rel="stylesheet" type="text/css" href="static/css/homepage.css">
-    </head>
-    <body>
-        <h1>meow</h1>
-    </body>
-</html>
+{% extends "layout.html" %}
+
+{% block content %}
+<link
+rel="stylesheet"
+type="text/css"
+href="{{ url_for('static', filename='homepage.css' )}}"
+/>
+
+<video autoplay muted loop id="backgroundVideo">
+    <source src="./static/freight.webm" type="video/webm">
+</video>
+
+<div class="hero">
+    <h1 class="hero-text-main">Logease</h1>
+    <h2 class="hero-text-sub">Logistik Terpercaya dan Nomor 1 di Asia Tenggara</h2>
+</div>
+{% endblock content %}
