@@ -1,0 +1,24 @@
+/* .navbar {
+    background-color: rgba(255, 255, 255, 0.3);
+} */
+
+#backgroundVideo {
+    position:fixed;
+    left:0;
+    top:0;
+    z-index: -100;
+}
+
+.page {
+    margin: 0 auto;
+    margin-top: 3em;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.37);
+    width: 30vw;
+    height: max-content;
+    padding: 1em;
+}
