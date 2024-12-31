@@ -33,3 +33,45 @@
     width: 100vw;
     height: 100vh;
 }
+
+.resi {
+    position: fixed;
+    bottom: 1em;
+    right: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.37);
+    margin: 1em 4em 0 4em;
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+}
+
+.submit-allignment{
+    padding-top:1.5em;
+    padding-left: 1em;
+}
+
+.order-details{
+    margin-top: 3em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.37);
+    padding: 1em
+}
+
+.order-details h1 {
+    margin-bottom: 0.5em;
+}
+
+.custom-alert{
+    margin: 0;
+    margin-left: 1em;
+}

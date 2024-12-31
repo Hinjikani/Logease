@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Logease Admin</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard.css' )}}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="sidebar admin">
+            <a href="{{ url_for('dash.dashboard')}}">Order</a>
+            <a href="{{ url_for('dash.armada_dashboard')}}">Armada</a>
+            <a class="active" href="{{ url_for('dash.admin_dashboard')}}">Admin</a>
+            <a href="{{ url_for('main.home')}}">Homepage</a>
+            <a style="background-color: rgb(255 125 125)", href="{{ url_for('users.logout')}}">Logout</a>
+        </div>
+        <div class="dashboard">
+            <div class="navbar">
+                <h1>Admin Dashboard</h1>
+                <p>Halo {{current_user.username}}</p>
+            </div>
+            <div class="card-container">
+                <a class="card admin" href="{{ url_for('dash.register_armada') }}">
+                    <div class="card-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="48" height="48" stroke-width="1.5">
+                            <path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5"></path>
+                            <path d="M12 12l8 -4.5"></path>
+                            <path d="M12 12l0 9"></path>
+                            <path d="M12 12l-8 -4.5"></path>
+                            <path d="M16 5.25l-8 4.5"></path>
+                        </svg>
+                        <h1>Register Armada</h1>
+                    </div>
+                    <p></p>
+                </a>
+                <a class="card admin" href="{{ url_for('dash.privilege') }}">
+                    <div class="card-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="48" height="48" stroke-width="1.5">
+                            <path d="M9.615 20h-2.615a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8"></path>
+                            <path d="M14 19l2 2l4 -4"></path>
+                            <path d="M9 8h4"></path>
+                            <path d="M9 12h2"></path>
+                        </svg>
+                        <h1>Change User Privilege</h1>
+                    </div>
+                    <p></p>
+                </a>
+            </div>
+
+        </div>
+    </body>
+</html>

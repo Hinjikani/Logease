@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="{{ url_for('static', filename='homepage.css' )}}"
+    />
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="{{ url_for('static', filename='freight.webm') }}" type="video/webm">
+    </video>
+    <div class="container order-details">
+        <h1>Order Details</h1>
+        {% if data %}
+            <p><strong>Order ID:</strong> {{ data['order_id'] }}</p>
+            <p><strong>Address:</strong> {{ data['address'] }}</p>
+            <p><strong>Order Date:</strong> {{ data['order_date'] }}</p>
+            <p><strong>Arrival Estimation:</strong> {{ data['arrival_estimation'] }}</p>
+            <p><strong>Status:</strong> {{ data['status'] }}</p>
+            <p><strong>Current Location:</strong> {{ data['current_location'] }}</p>
+            <p><strong>Receiver:</strong> {{ data['receiver'] }}</p>
+            <p><strong>Order Fee:</strong> Rp {{ data['order_fee'] }}</p>
+        {% else %}
+            <p>No order details available.</p>
+        {% endif %}
+    </div>
+{% endblock content %}

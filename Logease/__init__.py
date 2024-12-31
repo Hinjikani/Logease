@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -21,7 +21,14 @@ def create_app(config_class=Config):
 
     from Logease.users.routes import users
     from Logease.main.routes import main
+    from Logease.dashboard.routes import dash
+    from Logease.armada.routes import armada
+    from Logease.order.routes import order
+
+    app.register_blueprint(armada)
     app.register_blueprint(users)
     app.register_blueprint(main)
+    app.register_blueprint(dash)
+    app.register_blueprint(order)
 
     return app

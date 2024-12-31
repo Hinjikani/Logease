@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard.css' )}}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="sidebar">
+            <a href="{{ url_for('dash.dashboard')}}">Order</a>
+            <a class="active" href="{{ url_for('dash.armada_dashboard')}}">Armada</a>
+            <a href="{{ url_for('dash.admin_dashboard')}}">Admin</a>
+            <a href="{{ url_for('main.home')}}">Homepage</a>
+            <a style="background-color: rgb(255 125 125)", href="{{ url_for('users.logout')}}">Logout</a>
+        </div>
+        <div class="dashboard">
+            <div class="navbar">
+                <h1>Armada Overview</h1>
+                <p>Halo {{current_user.username}}</p>
+            </div>
+            <div class="insights">
+                <div class="card">
+                    <div class="card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="48" height="48" stroke-width="1.5">
+                        <path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5"></path>
+                        <path d="M12 12l8 -4.5"></path>
+                        <path d="M12 12l0 9"></path>
+                        <path d="M12 12l-8 -4.5"></path>
+                        <path d="M16 5.25l-8 4.5"></path>
+                    </svg>
+                    <h1>Armadas</h1>
+                    </div>
+                    <p>{{ armada_count }}</p>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="48" height="48" stroke-width="1.5">
+                            <path d="M9.615 20h-2.615a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8"></path>
+                            <path d="M14 19l2 2l4 -4"></path>
+                            <path d="M9 8h4"></path>
+                            <path d="M9 12h2"></path>
+                        </svg>
+                        <h1>Active Armada</h1>
+                    </div>
+                    <p>{{ active_armada_count }}</p>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="48" height="48" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor">
+                            <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                            <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                            <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"></path>
+                        </svg>
+                        <h1>Inactive Armada</h1>
+                    </div>
+                    <p>{{ inactive_armada_count }}</p>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="48" height="48" stroke-width="1.5">
+                            <path d="M9.615 20h-2.615a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8"></path>
+                            <path d="M14 19l2 2l4 -4"></path>
+                            <path d="M9 8h4"></path>
+                            <path d="M9 12h2"></path>
+                        </svg>
+                        <h1>Average Capacity</h1>
+                    </div>
+                    <p>{{ average_capacity }}%</p>
+                </div>
+                <!-- <div class="card">
+                    <div class="card-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="48" height="48" stroke-width="1.5">
+                            <path d="M9 11l3 3l8 -8"></path>
+                            <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
+                        </svg>
+                        <h1>Delivered</h1>
+                    </div>
+                    <p></p>
+                </div> -->
+            </div>
+            <div id="table"></div>
+        </div>
+        <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+        <script src="{{ url_for('static', filename='dashboard_table_armada.js' )}}"></script>
+    </body>
+</html>

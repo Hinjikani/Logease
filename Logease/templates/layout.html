@@ -38,28 +38,35 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link text-white" aria-current="page" href="{{ url_for('main.home') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#">Link</a>
-            </li>
+            </li> -->
           </ul>
           <ul class="d-flex navbar-nav mb-2 mb-lg-0">
             {% if current_user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-item nav-link" href="#">Account</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item nav-link" href="#">Logout</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="btn btn-outline-info me-2" href="{{ url_for('users.register') }}">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-outline-info" href="{{ url_for('users.login') }}">Login</a>
-            </li>
+              {% if current_user.privilege == 'admin' %}
+                <li class="nav-item">
+                  <a class="btn btn-outline-light" href="{{ url_for('dash.dashboard') }}">Dashboard</a>
+                </li>
+              {% elif current_user.privilege == 'armada'%}
+                <li class="nav-item">
+                  <a class="btn btn-outline-light" href="{{ url_for('armada.armada_dash') }}">Dashboard</a>
+                </li>
+              {% elif current_user.privilege == 'user'%}
+                <li class="nav-item">
+                  <a class="btn btn-outline-light" href="{{ url_for('order.order_dash') }}">Dashboard</a>
+                </li>
+              {% endif %}
+              {% else %}
+              <li class="nav-item">
+                <a class="btn btn-outline-light me-2" href="{{ url_for('users.register') }}">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-outline-light" href="{{ url_for('users.login') }}">Login</a>
+              </li>
             {% endif %}
           </ul>
         </div>

@@ -1,0 +1,11 @@
+<ADMIN>
+Email: admin@admin.com
+Password: adminpassword
+
+<ARMADA>
+Email: armada@armada.com
+Password: armadapassword
+
+<USER>
+Email: user@user.com
+Password: userpassword

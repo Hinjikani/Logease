@@ -1,0 +1,143 @@
+/* * {
+    outline: 2px solid red;
+} */
+
+body {
+    display: flex;
+    height: max-content;
+    margin: 0;
+    font-family: "Plus Jakarta Sans", serif;
+}
+
+.sidebar {
+    background-color: rgb(246,246,246);
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.sidebar li {
+    list-style-type: none;
+    width: 100%;
+    border-left: 0.3em solid black;
+    height: max-content;
+    width: max-content;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    padding: 1em;
+    padding-right: 5em;
+}
+
+a:hover {
+    background-color: rgb(230,230,230);
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    flex-grow: 1;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: max-content;
+    width: 100%;
+}
+
+.navbar h1 {
+    margin-left: 1em;
+}
+
+.navbar p {
+    margin-right: 2em;
+    font-size: 1.5em;
+}
+
+.insights {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    height: max-content;
+    width: 95%;
+    justify-content: space-between;
+    gap: 2em;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid black;
+    height: 10em;
+    border-radius: 20px;
+    flex: 1;
+    padding: 1em 1em;
+}
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+}
+
+.card-header h1{
+    margin: 0;
+    margin-top: 0.1em;
+    margin-left: 0.3em;
+}
+
+.card p {
+    font-size: 3em;
+    margin: 0;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+
+#table {
+    margin: 0 auto;
+    margin-top: 1em;
+    width:80vw;
+}
+
+.active {
+    border-left: 0.3em solid black;
+}
+
+.sidebar.admin {
+    height:100vh;
+}
+
+.card-container {
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.card.admin {
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card.admin:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.register {
+    width: 30vw;
+    padding: 1em 0 0 1em;
+}
+
+.submit-button {
+    margin-top: 1em
+}
